@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas de Atuação - Especialista em IA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x.x/css/all.min.css"> 
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+             <div class="logo">
+                <a href="index.html">AI_Expert();</a>
+            </div>
+            <nav class="main-nav">
+                 <button class="mobile-menu-button" aria-label="Abrir Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="areas.html" class="active">Áreas</a></li>
+                    <li><a href="futuro.html">Futuro</a></li>
+                    <li><a href="recursos.html">Recursos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-padding">
+        <section class="container">
+            <h1 class="page-title">Áreas de Atuação em <span class="highlight">Inteligência Artificial</span></h1>
+            <p class="page-subtitle">A IA é um campo vasto com diversas especializações. Explore algumas das principais:</p>
+
+            <!-- Filtro Simples (Opcional - requer JS adicional) -->
+            <!--
+            <div class="filter-container">
+                <button data-filter="all" class="active">Todas</button>
+                <button data-filter="ml">Machine Learning</button>
+                <button data-filter="nlp">NLP</button>
+                <button data-filter="cv">Visão Comp.</button>
+            </div>
+            -->
+
+            <div class="areas-grid">
+                <article class="area-card" data-category="ml">
+                    <img src="img/placeholder-area1.jpg" alt="Machine Learning" class="area-card-img">
+                    <!-- <i class="fas fa-robot area-icon"></i> -->
+                    <h3>Machine Learning</h3>
+                    <p>Desenvolvimento de algoritmos que permitem aos sistemas aprender e melhorar a partir de dados, sem serem explicitamente programados.</p>
+                </article>
+
+                <article class="area-card" data-category="nlp">
+                     <img src="img/placeholder-area2.jpg" alt="Processamento de Linguagem Natural" class="area-card-img">
+                     <!-- <i class="fas fa-language area-icon"></i> -->
+                    <h3>Processamento de Linguagem Natural (PLN)</h3>
+                    <p>Capacitar computadores a entender, interpretar e gerar linguagem humana de forma significativa.</p>
+                </article>
+
+                <article class="area-card" data-category="cv">
+                     <img src="img/placeholder-area1.jpg" alt="Visão Computacional" class="area-card-img">
+                     <!-- <i class="fas fa-eye area-icon"></i> -->
+                    <h3>Visão Computacional</h3>
+                    <p>Permitir que máquinas "vejam" e interpretem informações visuais do mundo, como imagens e vídeos.</p>
+                </article>
+
+                <article class="area-card" data-category="robotics">
+                     <img src="img/placeholder-area2.jpg" alt="Robótica" class="area-card-img">
+                     <!-- <i class="fas fa-android area-icon"></i> -->
+                    <h3>Robótica Inteligente</h3>
+                    <p>Combinação de IA com robótica para criar robôs autônomos capazes de realizar tarefas complexas e interagir com o ambiente.</p>
+                </article>
+
+                <article class="area-card" data-category="ethics">
+                     <img src="img/placeholder-area1.jpg" alt="Ética em IA" class="area-card-img">
+                     <!-- <i class="fas fa-balance-scale-right area-icon"></i> -->
+                    <h3>Ética em IA</h3>
+                    <p>Estudo e implementação de princípios éticos para garantir que a IA seja desenvolvida e utilizada de forma justa, transparente e responsável.</p>
+                </article>
+
+                <article class="area-card" data-category="data">
+                     <img src="img/placeholder-area2.jpg" alt="Engenharia de Dados para IA" class="area-card-img">
+                     <!-- <i class="fas fa-database area-icon"></i> -->
+                    <h3>Engenharia de Dados para IA</h3>
+                    <p>Coleta, limpeza, transformação e gerenciamento de grandes volumes de dados para alimentar modelos de IA eficazes.</p>
+                </article>
+                 <!-- Adicione mais cards conforme necessário -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2024 AI_Expert(). Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+     <!-- Script adicional para filtro, se implementado -->
+     <!-- <script src="js/filter.js"></script> -->
+</body>
+</html>
