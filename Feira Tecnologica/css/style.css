@@ -607,6 +607,186 @@ ul {
     transform: translateY(50px);
 }
 
+/* === Timeline Styles === */
+.timeline-container {
+    position: relative;
+    padding: calc(var(--spacing-unit) * 2) 0;
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+/* A linha central vertical */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px; /* Largura da linha */
+    height: 100%;
+    background-color: var(--border-color); /* Cor da linha */
+    z-index: 1;
+}
+
+.timeline-item {
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2.5); /* Espaço para a linha e o ponto */
+    position: relative;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    width: 50%; /* Metade da largura */
+    z-index: 2;
+}
+
+/* Itens à esquerda */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right; /* Alinha texto à direita para itens da esquerda */
+    padding-right: calc(var(--spacing-unit) * 3.5); /* Mais espaço à direita do texto */
+}
+
+/* Itens à direita */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: calc(var(--spacing-unit) * 3.5); /* Mais espaço à esquerda do texto */
+}
+
+/* O ponto na linha do tempo */
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--bg-color); /* Fundo igual ao body */
+    border: 3px solid var(--accent-color); /* Borda na cor de destaque */
+    border-radius: 50%;
+    top: calc(var(--spacing-unit) * 1.5); /* Ajustar verticalmente */
+    z-index: 3; /* Acima da linha */
+}
+
+/* Posição do ponto para itens da esquerda */
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: calc(-7.5px - var(--spacing-unit) * 0); /* Metade da largura do ponto, ajustar se a linha nao for 50% */
+    transform: translateX(50%);
+}
+
+/* Posição do ponto para itens da direita */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -7.5px; /* Metade da largura do ponto */
+     transform: translateX(-50%);
+}
+
+/* Caixa de conteúdo */
+.timeline-content {
+    background-color: var(--surface-color);
+    padding: calc(var(--spacing-unit) * 1.2);
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Pequena seta/triângulo apontando para a linha */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--spacing-unit) * 1.5);
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Seta para itens da esquerda */
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -10px; /* Ajustar posição da seta */
+    border-width: 10px 0 10px 10px; /* Triângulo apontando para a direita */
+    border-color: transparent transparent transparent var(--surface-color); /* Cor da seta */
+}
+
+/* Seta para itens da direita */
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -10px; /* Ajustar posição da seta */
+    border-width: 10px 10px 10px 0; /* Triângulo apontando para a esquerda */
+    border-color: transparent var(--surface-color) transparent transparent; /* Cor da seta */
+}
+
+
+.timeline-era {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-family: var(--font-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    font-weight: bold;
+}
+
+.timeline-content h4 {
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    color: var(--primary-text-color);
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 0; /* Remover margem inferior do último parágrafo */
+}
+
+/* === Timeline Responsivo === */
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 15px; /* Move a linha para a esquerda */
+        transform: translateX(0);
+    }
+
+    .timeline-item {
+        width: 100%; /* Ocupa toda a largura */
+        padding-left: calc(var(--spacing-unit) * 3.5); /* Espaço à esquerda para a linha/ponto */
+        padding-right: var(--spacing-unit); /* Menos espaço à direita */
+        left: 0 !important; /* Força alinhamento à esquerda */
+        text-align: left !important; /* Força texto à esquerda */
+    }
+
+     .timeline-item:nth-child(odd),
+     .timeline-item:nth-child(even) {
+        left: 0; /* Reseta o posicionamento */
+        padding-left: calc(var(--spacing-unit) * 3.5);
+        padding-right: var(--spacing-unit);
+        text-align: left; /* Garante que texto fique à esquerda */
+    }
+
+
+    .timeline-dot {
+         left: 15px; /* Alinha o ponto com a nova posição da linha */
+         transform: translateX(-50%); /* Centraliza o ponto na linha */
+    }
+     .timeline-item:nth-child(odd) .timeline-dot,
+     .timeline-item:nth-child(even) .timeline-dot {
+        left: 15px;
+        right: auto; /* Reseta o right */
+        transform: translateX(-50%);
+    }
+
+
+    .timeline-content::before {
+         left: -10px; /* Todas as setas apontam para a esquerda */
+         right: auto; /* Reseta o right */
+         border-width: 10px 10px 10px 0;
+         border-color: transparent var(--surface-color) transparent transparent;
+    }
+     .timeline-item:nth-child(odd) .timeline-content::before,
+     .timeline-item:nth-child(even) .timeline-content::before {
+         left: -10px;
+         right: auto;
+         border-width: 10px 10px 10px 0;
+         border-color: transparent var(--surface-color) transparent transparent;
+    }
+
+    /* Ajuste no data-aos para mobile, se necessário (opcional) */
+     .timeline-item[data-aos="fade-right"],
+    .timeline-item[data-aos="fade-left"] {
+        transform: translateX(0); 
+        transition-property: opacity; 
+    } 
+}
+
 
 /* === Media Queries (Responsividade) === */
 
