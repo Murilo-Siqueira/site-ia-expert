@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x.x/css/all.min.css"> 
-    <!-- Biblioteca de Animação de Scroll (Opcional - Ex: AOS) -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -52,7 +51,7 @@
 
         <section class="container content-section" data-aos="fade-up">
             <h2 class="section-title">Tendências Emergentes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra augue nec augue. Nam vitaero lacus, eu iaculis lorem tincidunt ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Generativa (criação de conteúdo), IA Explicável (entender decisões da IA), IA na "borda" (em dispositivos), e modelos cada vez maiores e multimodais (texto, imagem, som).</p>
             <ul>
                 <li>IA Generativa (Modelos como GPT, DALL-E)</li>
                 <li>IA Explicável (XAI)</li>
@@ -64,16 +63,62 @@
 
          <section class="container content-section" data-aos="fade-up">
             <h2 class="section-title">O Futuro do Trabalho em IA</h2>
-            <p>Suspendisse potenti. In eleifend quam arcu, vitae tristique est faucibus non. Aenean nec ipsum non eros sollicitudin blandit eu ut enim. Integer mattis varius nisi, eu convallis quam suscipit ut. Donec eget augue eu lectus maximus blandit.</p>
+            <p>Automação de tarefas coexistindo com a criação de novas funções especializadas em IA. Ênfase na colaboração humano-máquina e na necessidade de requalificação.</p>
             <!-- Conceito de Linha do Tempo (poderia ser implementado com CSS/JS) -->
-            <div class="timeline-concept">
-                <p><strong>[Conceito Visual: Linha do tempo mostrando evolução das carreiras em IA]</strong></p>
+                       <!-- Início da Linha do Tempo -->
+           <div class="timeline-container">
+            <!-- Item 1 -->
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-era">Décadas 50-80</span>
+                    <h4>Pesquisador Acadêmico / Lógica Simbólica</h4>
+                    <p>Foco inicial em resolver problemas abstratos, lógica formal e os primeiros conceitos de redes neurais. Atuação majoritariamente em universidades e centros de pesquisa.</p>
+                </div>
             </div>
+            <!-- Item 2 -->
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-era">Anos 90 - Início 2000</span>
+                    <h4>Eng. de Sistemas Especialistas / Data Mining</h4>
+                    <p>Criação de sistemas baseados em regras para tarefas específicas. Surgimento da análise de padrões em grandes volumes de dados (Data Mining) em contextos empresariais.</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-era">Meados 2000 - 2010</span>
+                    <h4>Engenheiro de Machine Learning (Inicial)</h4>
+                    <p>Popularização de algoritmos como SVM e Random Forests. Foco em modelagem preditiva com dados estruturados, otimização e reconhecimento de padrões.</p>
+                </div>
+            </div>
+             <!-- Item 4 -->
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-era">2012 - Presente</span>
+                    <h4>Cientista de Dados / Eng. de ML / Esp. Deep Learning</h4>
+                    <p>Explosão do Deep Learning. Grande demanda por profissionais que combinam estatística, programação e conhecimento de negócio. Especializações em PLN, Visão Computacional, etc.</p>
+                </div>
+            </div>
+             <!-- Item 5 -->
+             <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-era">Futuro Próximo</span>
+                    <h4>Eng. de MLOps / Ética em IA / Eng. de IA Generativa</h4>
+                    <p>Foco crescente na operacionalização e monitoramento de modelos (MLOps), garantia de uso ético e justo (Ética em IA), e desenvolvimento de modelos que criam conteúdo (IA Generativa).</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fim da Linha do Tempo -->
         </section>
 
         <section class="container content-section" data-aos="fade-up">
             <h2 class="section-title">Desafios Éticos e Sociais</h2>
-            <p>Phasellus ut turpis a nisl ullamcorper luctus. Morbi tincidunt nisl ut justo. Aliquam vitae turpis. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+            <p>Combater vieses algorítmicos, garantir privacidade e transparência, definir responsabilidade por erros da IA e regular seu uso para evitar abusos.</p>
              <ul>
                 <li>Viés algorítmico e justiça</li>
                 <li>Privacidade de dados</li>
@@ -92,12 +137,13 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-          duration: 800, // Duração da animação
-          once: true // Animar apenas uma vez
-      });
-    </script> 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 800, // Duração da animação
+      once: true,    // Animar apenas uma vez
+      offset: 100   // Gatilho um pouco antes de entrar na viewport
+  });
+</script> 
 </body>
 </html>
